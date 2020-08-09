@@ -1,3 +1,8 @@
+/* program to find prime numbers using sieve of eratosthenes
+	time complex. O(n.log(log(n)))
+*/
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
