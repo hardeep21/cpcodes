@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void printfun(set<int> comb)
+{
+    cout<<comb.size();
+}
+
+
+void unionarr(int a[],int b[],int m,int n)
+{
+    set<int> comb;
+    for(int i=0; i<m; i++)
+        comb.insert(a[i]);
+    
+    for(int i=0; i<n; i++)
+        comb.insert(b[i]);
+    
+    printfun(comb);
+}
+
+int main() 
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+    int m,n;
+    cin>>m>>n;
+    int a[m],b[n];
+    for(int i=0; i<m; i++)
+        cin>>a[i];
+        
+    for(int i=0; i<n; i++)
+        cin>>b[i];
+            
+    unionarr(a,b,m,n);
+    cout<<'\n';
+	}
+	return 0;
+}
