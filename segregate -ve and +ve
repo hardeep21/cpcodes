@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void arrsort(int arr[],int n)
+{
+    //considering 0 as +ve
+    int nlast = 0, pfirst = n-1;
+    while(nlast <= pfirst)
+    {
+        if(arr[nlast]<0)
+            nlast++;
+        else
+            swap(arr[nlast],arr[pfirst--]);
+
+    }
+}
+
+void printfun(int arr[],int n)
+{
+    for(int i = 0; i<n ; i++)
+        cout<<arr[i]<<' ';
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i = 0; i<n; i++)
+        cin>>arr[i];
+    arrsort(arr,n);
+    printfun(arr,n);
+    cout<<'\n';
+    }
+    return 0;
+}
