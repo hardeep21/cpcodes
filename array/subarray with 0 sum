@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool subArrayExists(int arr[], int n);
+
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    int arr[n];
+	    for(int i=0;i<n;i++)
+	    cin>>arr[i];
+	    	if (subArrayExists(arr, n))
+		cout << "Yes\n";
+	else
+		cout << "No\n";
+	}
+	return 0;
+}
+bool subArrayExists(int arr[], int n)
+{
+    unordered_map <int,bool> stat;
+    int sum=0;
+    stat[sum]=true;
+    // bool ans=false;
+    for(int i=0; i<n; i++)
+    {
+        sum+=arr[i];
+        if(stat[sum])
+            return true;
+        stat[sum]=true;
+    }
+    return false;
+}
